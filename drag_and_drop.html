@@ -93,6 +93,7 @@
                 dragged.style.left = event.target.style.left;
                 dragged.style.top = event.target.style.top;
             }else if(event.target.className == "theBody"){
+                // park the dragged elem somewhere on the body
                 dragged.style.left = event.pageX+ "px";
                 dragged.style.top = event.pageY+ "px";
 
