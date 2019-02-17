@@ -13,6 +13,7 @@
             height: 20px;
             text-align: center;
             background: white;
+            position: absolute;
         }
 
         .dropzone {
@@ -26,7 +27,7 @@
     </style>
 </head>
 
-<body>
+<body class="theBody">
 
     <div class="dropzone">
         <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
@@ -83,12 +84,19 @@
         document.addEventListener("drop", function(event) {
             // prevent default action (open as link for some elements)
             event.preventDefault();
+            console.log("DROP" ,event.target.className)
             // move dragged elem to the selected drop target
             if (event.target.className == "dropzone") {
                 event.target.style.background = "";
                 dragged.parentNode.removeChild(dragged);
                 event.target.appendChild(dragged);
-            }
+                dragged.style.left = event.target.style.left;
+                dragged.style.top = event.target.style.top;
+            }else if(event.target.className == "theBody"){
+                dragged.style.left = event.pageX+ "px";
+                dragged.style.top = event.pageY+ "px";
+
+             }
 
         });
 
