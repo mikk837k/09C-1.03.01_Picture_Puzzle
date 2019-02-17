@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Loading</title>
+    <style></style>
+</head>
+
+<body>
+
+
+
+
+    <img src="" alt="">
+
+    <button>Load Image</button>
+
+
+
+
+    <script>
+        const imageAddress = "https://timedotcom.files.wordpress.com/2017/10/st-vincent-masseduction-interview.jpg";
+
+
+        document.addEventListener("DOMContentLoaded", startTheScript);
+
+        function startTheScript() {
+            document.querySelector("button").addEventListener("click", loadTheImage)
+
+        }
+
+        function loadTheImage() {
+            document.querySelector("img").src = imageAddress;
+            document.querySelector("img").onload = theImageHasLoaded;
+
+        }
+
+        function theImageHasLoaded() {
+
+            alert("THE IMAGE HAS LOADED");
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .dot {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(0, 0, 0, 0.36);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+
+
+
+
+
+
+    <script>
+        document.querySelectorAll(".dot").forEach(eachDot => {
+
+            eachDot.style.left = `${Math.random()*500 + 250}px`;
+
+
+
+        });
+
+    </script>
+</body>
+
+</html>
