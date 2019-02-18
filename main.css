@@ -1,22 +1,23 @@
-/* button {
+button {
   display: block;
-} */
+}
 
-/* img {
+img {
   width: 500px;
-} */
+}
 
 #container {
   display: grid;
   background-color: beige;
   width: 200px;
-}
-
-.dropzone {
   outline: 0.5px solid grey;
 }
 
+/* .dropzone {
+  outline: 0.5px solid grey;
+}*/
+
 .piece {
-  outline: 0.5px solid rgb(30, 34, 247);
+  /* outline: 0.5px solid rgb(30, 34, 247); */
   position: absolute;
 }

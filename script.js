@@ -23,7 +23,13 @@ function loadTheImage() {
 
   generateDropzones(container_width, container_height);
   generatePieces(container_width, container_height);
-  randomlyPlacePieces();
+
+  //   TODO: Get the random placement of pieces to work. With the code below the pieces can't be placed on the board
+
+  //   document.querySelectorAll(".piece").forEach(eachDot => {
+  //     eachDot.style.right = `${Math.random() * 100 + 250}px`;
+  //     eachDot.style.top = `${Math.random() * 500 + 350}px`;
+  //   });
 }
 
 function theImageHasLoaded() {
@@ -49,7 +55,7 @@ function generateDropzones(container_width, container_height) {
 
       dropzone.style.height = container_height / numOfYPieces + "px";
 
-      dropzone.textContent = `${x}${y}`;
+      //   dropzone.textContent = `${x}${y}`;
       dropzone.classList.add("dropzone");
 
       document.querySelector("#container").appendChild(dropzone);
@@ -79,7 +85,7 @@ function generatePieces(container_width, container_height) {
 
       piece.style.backgroundPosition = `-${piecePosWidth}px -${piecePosHeight}px`;
 
-      piece.textContent = `${x}${y}`;
+      //   piece.textContent = `${x}${y}`;
       piece.classList.add("piece");
 
       piece.draggable = true;
@@ -90,16 +96,13 @@ function generatePieces(container_width, container_height) {
 }
 
 // function randomlyPlacePieces() {
-//   document.querySelectorAll(".piece").forEach(eachDot => {
-//     eachDot.style.right = `${Math.random() * 100 + 250}px`;
-//     eachDot.style.top = `${Math.random() * 500 + 350}px`;
-//   });
+//
 // }
 
 let dragged;
 
 /* events fired on the draggable target */
-document.addEventListener("drag", function(event) {});
+// document.addEventListener("drag", function(event) {});
 
 document.addEventListener("dragstart", function(event) {
   // store a ref. on the dragged elem
