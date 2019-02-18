@@ -1,58 +1,45 @@
 <!DOCTYPE html>
 <html lang="">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Two dimensional loop</title>
     <style>
-        #container{
-            display:grid;
-            background-color: beige;
-            width :200px;
-
-        }
-        .piece{
-            outline : 0.5px solid grey;
-
-        }
+      #container {
+        display: grid;
+        background-color: beige;
+        width: 200px;
+      }
+      .piece {
+        outline: 0.5px solid grey;
+      }
     </style>
-</head>
+  </head>
 
-
-
-
-
-<body>
-
-   <div id="container"></div>
+  <body>
+    <div id="container"></div>
     <script>
+      const numOfXPieces = 3;
+      const numOfYPieces = 3;
+      const container_width = 200;
+      const container_height = 200;
 
-        const numOfXPieces = 3;
-        const numOfYPieces = 3;
-        const container_width = 200;
-        const container_height = 200;
+      document.querySelector(
+        "#container"
+      ).style.gridTemplateColumns = `repeat(${numOfXPieces}, 1fr)`;
+      document.querySelector("#container").style.width = `${container_width}px`;
+      for (let y = 0; y < numOfYPieces; y++) {
+        for (let x = 0; x < numOfXPieces; x++) {
+          let piece = document.createElement("div");
 
-        document.querySelector("#container").style.gridTemplateColumns = `repeat(${numOfXPieces}, 1fr)`;
-        for (let y = 0; y < numOfYPieces; y++) {
-                for (let x = 0; x < numOfXPieces; x++) {
+          piece.style.height = container_height / numOfYPieces + "px";
 
-                    let piece = document.createElement("div");
+          piece.textContent = `${x}${y}`;
+          piece.classList.add("piece");
 
-
-                    piece.style.height = (container_height / numOfYPieces) + "px";
-
-
-                    piece.textContent =  `${x}${y}`;
-                    piece.classList.add("piece");
-
-
-
-                    document.querySelector("#container").appendChild(piece);
-
-
-            }
-
+          document.querySelector("#container").appendChild(piece);
         }
+      }
     </script>
-</body>
+  </body>
 </html>
