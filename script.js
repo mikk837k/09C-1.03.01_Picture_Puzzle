@@ -1,8 +1,8 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", init);
 
-const imageAddress = document.querySelector("#url");
-//   "http://www.dumpaday.com/wp-content/uploads/2016/09/baptism-baby.jpg";
+const imageAddress =
+  "http://www.dumpaday.com/wp-content/uploads/2016/09/baptism-baby.jpg";
 
 const numOfXPieces = 3;
 const numOfYPieces = 3;
@@ -23,6 +23,7 @@ function loadTheImage() {
 
   generateDropzones(container_width, container_height);
   generatePieces(container_width, container_height);
+  randomlyPlacePieces();
 }
 
 function theImageHasLoaded() {
@@ -88,6 +89,13 @@ function generatePieces(container_width, container_height) {
   }
 }
 
+// function randomlyPlacePieces() {
+//   document.querySelectorAll(".piece").forEach(eachDot => {
+//     eachDot.style.right = `${Math.random() * 100 + 250}px`;
+//     eachDot.style.top = `${Math.random() * 500 + 350}px`;
+//   });
+// }
+
 let dragged;
 
 /* events fired on the draggable target */
@@ -127,7 +135,3 @@ document.addEventListener("drop", function(event) {
     dragged.style.top = event.pageY + "px";
   }
 });
-
-// document.querySelectorAll(".piece").forEach(eachPiece => {
-//   eachPiece.style.left = `${Math.random() * 500 + 250}px`;
-// });

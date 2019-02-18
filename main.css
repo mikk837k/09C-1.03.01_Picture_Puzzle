@@ -1,3 +1,11 @@
+/* button {
+  display: block;
+} */
+
+/* img {
+  width: 500px;
+} */
+
 #container {
   display: grid;
   background-color: beige;
